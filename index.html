@@ -871,6 +871,21 @@
       color: var(--accent) !important;
     }
 
+    /* ── AI section overrides — dark background needs white text ── */
+    .ai-section-wrap h2 {
+      color: #FFFFFF !important;
+    }
+    .ai-section-wrap h2 em {
+      color: #A9C2E5 !important;
+      font-style: normal !important;
+    }
+    .ai-section-wrap p {
+      color: rgba(255, 255, 255, 0.72) !important;
+    }
+    .ai-section-wrap .ai-label {
+      color: #7EB3E8 !important;
+    }
+
     /* Tighter, editorial section labels (eyebrow) */
     .section-label{
       font-family:'Inter', sans-serif !important;
@@ -881,39 +896,39 @@
     }
     .gold-rule{ background: var(--accent) !important; opacity:.55 !important; }
 
-    /* Refined buttons — sharper, no bevel, square corners (institutional) */
+    /* Refined buttons — rounded, polished */
     .btn-primary, .btn-secondary{
-      border-radius:2px !important;
+      border-radius: 8px !important;
       font-family:'Inter',sans-serif !important;
-      letter-spacing:.12em !important;
+      letter-spacing:.1em !important;
       font-weight:600 !important;
       font-size:.75rem !important;
       padding:15px 30px !important;
     }
-    .btn-primary{ background: var(--navy) !important; box-shadow:none !important; }
-    .btn-primary:hover{ background: var(--accent) !important; box-shadow:0 10px 28px rgba(11,31,58,.18) !important; transform:translateY(-1px) !important; }
+    .btn-primary{ background: var(--navy) !important; box-shadow: 0 4px 14px rgba(11,31,58,0.18) !important; }
+    .btn-primary:hover{ background: var(--accent) !important; box-shadow:0 10px 28px rgba(11,31,58,.22) !important; transform:translateY(-2px) !important; }
     .btn-secondary{ border:1px solid var(--navy) !important; }
     .btn-secondary:hover{ background:var(--navy) !important; color:#fff !important; }
 
-    /* Cards — flatter, editorial, hairline borders */
+    /* Cards — rounded, soft editorial */
     .service-card,.why-card,.eng-card,.testimonial-card,.contact-form-wrap{
-      border-radius:2px !important;
+      border-radius: 14px !important;
       border:1px solid var(--border-light) !important;
-      box-shadow:0 1px 0 rgba(11,31,58,0.04), 0 8px 28px -18px rgba(11,31,58,0.18) !important;
+      box-shadow:0 2px 0 rgba(11,31,58,0.03), 0 12px 40px -16px rgba(11,31,58,0.14) !important;
       background:#FFFFFF !important;
     }
     .service-card:hover,.why-card:hover,.eng-card:hover,.testimonial-card:hover{
-      border-color: rgba(11,31,58,0.22) !important;
-      box-shadow:0 2px 0 rgba(11,31,58,0.06), 0 22px 50px -22px rgba(11,31,58,0.28) !important;
+      border-color: rgba(11,31,58,0.15) !important;
+      box-shadow:0 4px 0 rgba(11,31,58,0.04), 0 28px 60px -18px rgba(11,31,58,0.22) !important;
     }
-    .service-card .icon-wrap{ border-radius:2px !important; }
+    .service-card .icon-wrap{ border-radius: 10px !important; }
 
-    /* Industry pills — editorial chip */
+    /* Industry pills — rounded chip */
     .industry-pill{
-      border-radius:2px !important;
+      border-radius: 999px !important;
       background:#fff !important;
       border:1px solid var(--border) !important;
-      letter-spacing:.14em !important;
+      letter-spacing:.1em !important;
       font-family:'Inter',sans-serif !important;
     }
 
@@ -958,8 +973,8 @@
     /* Testimonial editorial quote */
     .testimonial-card .quote-mark{ color: rgba(30,77,140,0.08) !important; font-size:9rem !important; }
 
-    /* Forms — sharper */
-    .form-input{ border-radius:2px !important; background:#FFFFFF !important; border:1px solid var(--border) !important; }
+    /* Forms — rounded */
+    .form-input{ border-radius: 8px !important; background:#FFFFFF !important; border:1px solid var(--border) !important; }
     .form-input:focus{ border-color:var(--navy) !important; box-shadow:0 0 0 3px rgba(11,31,58,0.07) !important; }
 
     /* Footer — deep institutional navy */
@@ -970,36 +985,37 @@
     /* CTA navy band keeps the dark editorial pull-quote feel */
     .cta-navy-band{ background:#08182F !important; }
 
-    /* Founder card — light editorial frame instead of dark surface */
+    /* Founder card — rounded editorial frame */
     [data-testid^="founder-"]{
       background:#FFFFFF !important;
       border:1px solid var(--border-light) !important;
       box-shadow:0 1px 0 rgba(11,31,58,0.04), 0 18px 60px -28px rgba(11,31,58,0.25) !important;
-      border-radius:2px;
+      border-radius: 14px !important;
     }
 
-    /* About right-rail card — light editorial */
+    /* About right-rail card — rounded editorial */
     #about .bg-surface{
       background:#FFFFFF !important;
       border:1px solid var(--border-light) !important;
       box-shadow:0 1px 0 rgba(11,31,58,0.04), 0 24px 70px -30px rgba(11,31,58,0.28) !important;
+      border-radius: 14px !important;
     }
 
-    /* Editorial image frame utility — hairline + soft shadow, square */
+    /* Editorial image frame utility — rounded + soft shadow */
     .editorial-figure{
       position:relative;
       overflow:hidden;
       border:1px solid var(--border-light);
       box-shadow:0 1px 0 rgba(11,31,58,0.04), 0 30px 80px -30px rgba(11,31,58,0.35);
-      border-radius:2px;
+      border-radius: 16px !important;
       background:#000;
     }
     .editorial-figure img{
       width:100%; height:100%; object-fit:cover; display:block;
       filter:grayscale(8%) contrast(1.02);
-      transition:transform .8s cubic-bezier(.16,1,.3,1), filter .8s;
+      transition: filter 0.9s cubic-bezier(0.25,0.46,0.45,0.94);
     }
-    .editorial-figure:hover img{ transform:scale(1.04); filter:grayscale(0%) contrast(1.05); }
+    .editorial-figure:hover img{ filter:grayscale(0%) contrast(1.04); }
     .editorial-figure .caption{
       position:absolute; left:18px; bottom:16px;
       font-family:'Inter',sans-serif; font-size:.68rem; letter-spacing:.22em;
@@ -1128,8 +1144,8 @@
     #hero h1 em{ color: var(--accent) !important; }
     #hero p{ color:#2A3442 !important; }
 
-    /* Section H2 italic accents */
-    h2 em{ color: var(--accent) !important; font-style:italic !important; }
+    /* Section H2 italic accents — light sections only */
+    section:not(.ai-section-wrap) h2 em{ color: var(--accent) !important; font-style:italic !important; }
 
     /* About narrative text (was text-white/55) */
     #about p{ color:#2A3442 !important; }
@@ -1412,6 +1428,481 @@
       100% { opacity: 0; transform: scale(1.35); }
     }
     /* ============================================================ */
+
+    /* ============================================================
+       ENHANCED ANIMATIONS — Parallax · Counters · Scramble · Ripple
+    ============================================================ */
+
+    /* ---- Refined Reveal Animations — professional, not theatrical ---- */
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      filter: blur(0px);
+      transition:
+        opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+        transform 0.7s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Stagger delays */
+    .reveal-delay-1  { transition-delay: 0.10s !important; }
+    .reveal-delay-2  { transition-delay: 0.20s !important; }
+    .reveal-delay-3  { transition-delay: 0.30s !important; }
+    .reveal-delay-4  { transition-delay: 0.40s !important; }
+    .reveal-delay-5  { transition-delay: 0.50s !important; }
+    .reveal-delay-6  { transition-delay: 0.60s !important; }
+
+    /* Fade-up with filter — removed for professional audience; plain translate only */
+    .reveal { filter: none !important; }
+
+    /* ---- Professional card hover — subtle border lift ---- */
+    .service-card, .why-card, .eng-card, .testimonial-card {
+      transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+    }
+    .service-card:hover, .why-card:hover, .eng-card:hover {
+      transform: translateY(-3px) !important;
+      border-color: rgba(46, 107, 184, 0.2) !important;
+      box-shadow: 0 8px 28px -8px rgba(11, 31, 58, 0.14),
+                  0 0 0 1px rgba(46, 107, 184, 0.08) !important;
+    }
+    .testimonial-card:hover {
+      transform: translateY(-2px) !important;
+      box-shadow: 0 10px 30px -10px rgba(11, 31, 58, 0.12) !important;
+    }
+
+    /* ---- Floating counter pulse ---- */
+    @keyframes counterPop {
+      0%   { transform: scale(1); }
+      40%  { transform: scale(1.06); }
+      100% { transform: scale(1); }
+    }
+    .counter-popped {
+      animation: counterPop 0.45s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+
+    /* ---- Why-card number rise animation ---- */
+    @keyframes numberRise {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .why-card.visible .font-serif.text-4xl {
+      animation: numberRise 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.25s both;
+    }
+
+    /* ---- Parallax depth on editorial figures — disabled ---- */
+    .editorial-figure {
+      transform-style: flat;
+    }
+
+    /* ============================================================ */
+
+    /* AI section uses the site's dark navy band — same as footer/CTA */
+    :root {
+      --ai-blue:   #2E6BB8;
+      --ai-light:  #4A8FD4;
+      --ai-glow:   rgba(46,107,184,0.15);
+      --ai-pale:   rgba(46,107,184,0.08);
+    }
+
+    .ai-section-wrap {
+      background: #08182F;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Subtle dot grid — matches site's existing grid patterns */
+    .ai-section-wrap::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle at 1px 1px, rgba(46,107,184,0.08) 1px, transparent 0);
+      background-size: 40px 40px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Neural network canvas backdrop */
+    #neural-canvas {
+      position: absolute;
+      inset: 0;
+      opacity: 0.3;
+      pointer-events: none;
+    }
+
+    /* Hero particle canvas */
+    #hero-particles {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      pointer-events: none;
+      opacity: 0.4;
+    }
+
+    /* AI badge in nav */
+    .ai-nav-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: rgba(46,107,184,0.1);
+      border: 1px solid rgba(46,107,184,0.25);
+      color: var(--accent-light, #2E6BB8);
+      font-size: 0.58rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 3px 9px;
+      border-radius: 20px;
+      animation: aiBadgePulse 3s ease-in-out infinite;
+    }
+    .ai-nav-badge::before {
+      content: '';
+      width: 5px; height: 5px;
+      background: var(--accent-light, #2E6BB8);
+      border-radius: 50%;
+      animation: aiDotBlink 1.5s ease-in-out infinite;
+    }
+    @keyframes aiBadgePulse {
+      0%,100% { box-shadow: 0 0 0 0 rgba(46,107,184,0); }
+      50%     { box-shadow: 0 0 10px 2px rgba(46,107,184,0.15); }
+    }
+    @keyframes aiDotBlink {
+      0%,100% { opacity: 1; }
+      50%     { opacity: 0.3; }
+    }
+
+    /* Section glow line — in site's blue */
+    .ai-glow-line {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(46,107,184,0.35), rgba(74,143,212,0.25), transparent);
+    }
+
+    /* AI section label */
+    .ai-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: #A9C2E5;
+    }
+
+    /* Benefit cards — matches site's dark card style */
+    .ai-benefit-card {
+      background: rgba(255,255,255,0.035);
+      border: 1px solid rgba(255,255,255,0.07);
+      padding: 28px 24px;
+      border-radius: 14px;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s cubic-bezier(.16,1,.3,1);
+    }
+    .ai-benefit-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(46,107,184,0.5), transparent);
+      opacity: 0;
+      transition: opacity 0.4s;
+    }
+    .ai-benefit-card:hover {
+      background: rgba(46,107,184,0.06);
+      border-color: rgba(46,107,184,0.2);
+      transform: translateY(-5px);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.3), 0 0 0 1px rgba(46,107,184,0.12);
+    }
+    .ai-benefit-card:hover::before { opacity: 1; }
+
+    .ai-icon-wrap {
+      width: 44px; height: 44px;
+      background: rgba(46,107,184,0.12);
+      border: 1px solid rgba(46,107,184,0.22);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+    }
+
+    .ai-metric-num {
+      font-family: 'Playfair Display', 'Cormorant Garamond', serif;
+      font-size: 2.6rem;
+      font-weight: 500;
+      color: #A9C2E5;
+      line-height: 1;
+    }
+
+    /* Comparison rows */
+    .ai-compare-row {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 16px;
+      padding: 13px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .ai-compare-row:last-child { border-bottom: none; }
+    .ai-compare-old {
+      color: rgba(255,255,255,0.22);
+      font-size: 0.78rem;
+      text-decoration: line-through;
+      text-align: right;
+    }
+    .ai-compare-new {
+      color: #A9C2E5;
+      font-size: 0.78rem;
+      font-weight: 600;
+    }
+    .ai-compare-label {
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.2);
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    /* Pipeline */
+    .ai-pipeline { display: flex; align-items: center; overflow: hidden; }
+    .ai-pipeline-step {
+      flex: 1; text-align: center; padding: 14px 6px;
+      background: rgba(255,255,255,0.03);
+      border-top: 1px solid rgba(255,255,255,0.05);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      position: relative;
+      font-size: 0.6rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+      color: rgba(255,255,255,0.28);
+      transition: all 0.4s;
+    }
+    .ai-pipeline-step.active {
+      background: rgba(46,107,184,0.1);
+      color: #A9C2E5;
+      border-color: rgba(46,107,184,0.2);
+    }
+    .ai-pipeline-step::after {
+      content: '›'; position: absolute; right: -8px; top: 50%;
+      transform: translateY(-50%); color: rgba(46,107,184,0.3); font-size: 1.1rem; z-index: 2;
+    }
+    .ai-pipeline-step:last-child::after { display: none; }
+    .ai-pipeline-step:first-child { border-left: 1px solid rgba(255,255,255,0.05); border-radius: 8px 0 0 8px; }
+    .ai-pipeline-step:last-child { border-right: 1px solid rgba(255,255,255,0.05); border-radius: 0 8px 8px 0; }
+
+    /* Ticker */
+    .data-ticker {
+      background: rgba(46,107,184,0.06);
+      border: 1px solid rgba(46,107,184,0.14);
+      border-radius: 8px;
+      padding: 10px 16px;
+      font-family: 'Courier New', monospace;
+      font-size: 0.7rem;
+      color: rgba(169,194,229,0.7);
+    }
+    .data-ticker::before { content: '▶  '; color: rgba(46,107,184,0.6); }
+
+    /* Scan line */
+    @keyframes scanLine {
+      0%   { transform: translateY(-100%); opacity: 0; }
+      10%  { opacity: 1; }
+      90%  { opacity: 1; }
+      100% { transform: translateY(2000%); opacity: 0; }
+    }
+    .ai-scan-line {
+      position: absolute; left: 0; right: 0; height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(46,107,184,0.25), transparent);
+      animation: scanLine 6s linear infinite;
+      pointer-events: none;
+    }
+
+    /* Hero tech badge */
+    .hero-ai-tag {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(46,107,184,0.08);
+      border: 1px solid rgba(46,107,184,0.22);
+      color: var(--accent-light, #2E6BB8);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.65rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase;
+      padding: 6px 14px; margin-bottom: 20px; border-radius: 20px;
+    }
+    .hero-ai-tag::before {
+      content: ''; width: 6px; height: 6px;
+      background: var(--accent-light, #2E6BB8);
+      border-radius: 50%; animation: aiDotBlink 1.2s ease-in-out infinite;
+    }
+
+    /* AI glow tag */
+    .ai-glow-tag {
+      display: inline-flex; align-items: center; gap: 5px;
+      background: rgba(46,107,184,0.08);
+      border: 1px solid rgba(46,107,184,0.2);
+      color: rgba(169,194,229,0.8);
+      font-size: 0.6rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+      padding: 3px 9px; border-radius: 20px;
+    }
+
+    /* Speed bar */
+    @keyframes speedMeterFill {
+      from { width: 0; }
+      to   { width: var(--target-w); }
+    }
+    .speed-bar {
+      height: 4px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-light));
+      border-radius: 2px; width: 0;
+      animation: speedMeterFill 1.8s cubic-bezier(.16,1,.3,1) forwards;
+      animation-play-state: paused;
+    }
+    .speed-bar.animated { animation-play-state: running; }
+
+    /* Accuracy ring */
+    .ai-ring-fill {
+      fill: none; stroke: var(--accent); stroke-width: 5;
+      stroke-linecap: round; stroke-dasharray: 150.8; stroke-dashoffset: 150.8;
+      transition: stroke-dashoffset 2.5s cubic-bezier(.16,1,.3,1);
+    }
+    .ai-ring-track { fill: none; stroke: rgba(255,255,255,0.06); stroke-width: 5; }
+
+    /* ============================================================
+       PARALLAX IMAGES
+    ============================================================ */
+    .parallax-wrap {
+      overflow: hidden;
+      position: relative;
+    }
+    .parallax-img {
+      will-change: transform;
+      transition: none;
+    }
+
+    /* ============================================================
+       GLOBAL ANIMATION ENHANCEMENTS
+    ============================================================ */
+
+    /* Staggered reveal — more dramatic */
+    .reveal {
+      opacity: 0;
+      transform: translateY(36px);
+      filter: blur(3px);
+      transition: opacity 0.85s cubic-bezier(.16,1,.3,1),
+                  transform 0.85s cubic-bezier(.16,1,.3,1),
+                  filter 0.85s cubic-bezier(.16,1,.3,1) !important;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); filter: blur(0) !important; }
+
+    /* Slide-in from left */
+    .reveal-left {
+      opacity: 0; transform: translateX(-40px);
+      transition: opacity 0.85s cubic-bezier(.16,1,.3,1), transform 0.85s cubic-bezier(.16,1,.3,1) !important;
+    }
+    .reveal-left.visible { opacity: 1; transform: translateX(0); }
+
+    /* Slide-in from right */
+    .reveal-right {
+      opacity: 0; transform: translateX(40px);
+      transition: opacity 0.85s cubic-bezier(.16,1,.3,1), transform 0.85s cubic-bezier(.16,1,.3,1) !important;
+    }
+    .reveal-right.visible { opacity: 1; transform: translateX(0); }
+
+    /* Scale reveal for cards */
+    .reveal-scale {
+      opacity: 0; transform: scale(0.94) translateY(24px);
+      transition: opacity 0.75s cubic-bezier(.16,1,.3,1), transform 0.75s cubic-bezier(.16,1,.3,1) !important;
+    }
+    .reveal-scale.visible { opacity: 1; transform: scale(1) translateY(0); }
+
+    /* Counter number animation */
+    .count-up { display: inline-block; }
+
+    /* Magnetic hover effect on buttons */
+    .btn-primary, .btn-secondary {
+      cursor: pointer;
+      transition: all 0.35s cubic-bezier(.16,1,.3,1) !important;
+    }
+
+    /* Card tilt hover — subtle 3D lift */
+    .tilt-card {
+      transform-style: preserve-3d;
+      transition: transform 0.4s cubic-bezier(.16,1,.3,1), box-shadow 0.4s ease;
+    }
+
+    /* Floating orb pulse animation - enhanced */
+    @keyframes orbFloat {
+      0%,100% { transform: translateY(0) scale(1); opacity: 0.6; }
+      33%     { transform: translateY(-22px) scale(1.05); opacity: 0.8; }
+      66%     { transform: translateY(12px) scale(0.96); opacity: 0.5; }
+    }
+
+    /* Section entry — wipe from left */
+    @keyframes wipeLeft {
+      from { clip-path: inset(0 100% 0 0); }
+      to   { clip-path: inset(0 0% 0 0); }
+    }
+    .wipe-in { animation: wipeLeft 1s cubic-bezier(.16,1,.3,1) both; }
+
+    /* Gold rule — grow animation enhanced */
+    .gold-rule {
+      animation: ruleGrow 1.4s cubic-bezier(.16,1,.3,1) both;
+      transform-origin: left;
+    }
+    @keyframes ruleGrow {
+      from { transform: scaleX(0); opacity: 0; }
+      to   { transform: scaleX(1); opacity: 0.55; }
+    }
+
+    /* Editorial figure — static, no zoom or parallax */
+    .editorial-figure {
+      overflow: hidden;
+    }
+    .editorial-figure img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+      filter: grayscale(8%) contrast(1.02);
+      transition: filter 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      will-change: auto;
+    }
+    .editorial-figure:hover img {
+      filter: grayscale(0%) contrast(1.04);
+    }
+
+    /* Hover shimmer on service cards */
+    .service-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at var(--mx,50%) var(--my,50%), rgba(46,107,184,0.06) 0%, transparent 60%);
+      opacity: 0;
+      transition: opacity 0.4s;
+      pointer-events: none;
+      border-radius: 14px;
+    }
+    .service-card:hover::after { opacity: 1; }
+
+    /* Stats bar numbers — counting shimmer */
+    .stat-num::after {
+      background: linear-gradient(90deg, transparent, rgba(46,107,184,0.15), transparent) !important;
+      animation: shimmerSweep 5s ease-in-out infinite !important;
+    }
+
+    /* Magnetic cursor glow */
+    #cursor-glow {
+      position: fixed;
+      width: 300px; height: 300px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(46,107,184,0.06) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+      transform: translate(-50%, -50%);
+      transition: transform 0.1s linear, opacity 0.3s;
+      mix-blend-mode: multiply;
+    }
+
+    /* ============================================================ */
 </style></head>
 <body class="font-sans">
   <div id="scroll-progress"></div>
@@ -1431,6 +1922,7 @@
       <div class="hidden lg:flex items-center gap-8">
         <a href="#about" class="nav-link" data-testid="nav-about" style="">About</a>
         <a href="#services" class="nav-link" data-testid="nav-services" style="">Services</a>
+        <span class="ai-nav-badge">AI-Powered</span>
         <a href="#industries" class="nav-link" data-testid="nav-industries" style="">Industries</a>
         <a href="#engagement" class="nav-link" data-testid="nav-engagement" style="">Engagement</a>
         <a href="#global" class="nav-link" data-testid="nav-global" style="">Global</a>
@@ -1468,12 +1960,17 @@
   <!-- ==================== HERO ==================== -->
   <section id="hero" class="hero-bg min-h-screen relative flex flex-col justify-center" data-testid="hero-section">
     <div class="hero-overlay absolute inset-0"></div>
+    <canvas id="hero-particles"></canvas>
     <div class="orb orb-1"></div>
     <div class="orb orb-2"></div>
     <div class="absolute inset-0 opacity-[0.03]" style="background-image: url('data:image/svg+xml,%3Csvg viewBox=\'0 0 200 200\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'n\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.75\' numOctaves=\'4\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23n)\'/%3E%3C/svg%3E'); background-size: 200px;"></div>
 
     <div class="relative z-10 max-w-7xl mx-auto px-6 pt-24 pb-16">
       <div class="max-w-3xl">
+        <!-- AI Tag -->
+        <div class="hero-ai-tag reveal reveal-delay-1 visible" style="display:inline-flex;margin-bottom:16px;">
+          AI-Augmented Research Intelligence
+        </div>
         <!-- Primary Headline -->
         <p class="font-sans text-xs md:text-sm font-semibold uppercase tracking-[0.35em] text-gold mb-5 reveal reveal-delay-1 visible">
           Precision.&nbsp; Insights.&nbsp; Edge.
@@ -1498,6 +1995,7 @@
         <div class="flex flex-wrap gap-4 reveal reveal-delay-3 visible">
           <a href="#contact" class="btn-primary" data-testid="hero-cta-primary">Book a Consultation</a>
           <a href="#services" class="btn-secondary" data-testid="hero-cta-secondary">Explore Services</a>
+          <a href="#ai-advantage" class="btn-secondary" style="border-color:rgba(0,200,255,0.4);color:#00C8FF;background:rgba(0,200,255,0.04);">See AI Advantage ↓</a>
         </div>
       </div>
     </div>
@@ -1587,7 +2085,7 @@
             We are not a generalist research firm. We specialise in the specific intelligence workstreams that drive investment and strategic decision-making: market analysis, competitive intelligence, commercial diligence research, opportunity screening, and IC-ready narrative development.
           </p>
           <p class="text-white/55 text-base leading-relaxed mb-10 reveal reveal-delay-4 visible">
-            Our model is deliberately senior-led and small. Every engagement receives direct involvement from our founders — ensuring the quality, nuance, and contextual judgement that institutional clients demand.
+            Our model is deliberately senior-led and small. Every engagement receives direct involvement from the founders — ensuring the quality, nuance, and contextual judgement that institutional clients demand.
           </p>
 
           <!-- Alma Mater Badges -->
@@ -1611,7 +2109,7 @@
             </div>
             <div class="gold-divider mb-8"></div>
             <p class="font-serif text-xl font-light italic text-white/80 leading-relaxed mb-8">
-              "Every engagement receives direct involvement from our founders — no junior pass-through, ever."
+              "Every engagement receives direct involvement from the founders — no junior pass-through, ever."
             </p>
             <div class="flex items-center gap-3">
               <div class="w-8 h-px bg-gold"></div>
@@ -1734,15 +2232,18 @@
               <i class="fas fa-search text-gold text-sm"></i>
             </div>
           </div>
-          <h3 class="font-serif text-2xl font-medium text-white mb-3">Advanced Secondary Research</h3>
+          <h3 class="font-serif text-2xl font-medium text-white mb-3">Research & Intelligence</h3>
           <p class="text-white/50 text-sm leading-relaxed mb-6">
-            Rigorous, source-verified market intelligence synthesised from primary filings, industry reports, and proprietary databases — structured for decision-making, not information-gathering.
+            Structured, synthesis-ready intelligence that builds conviction — not data dumps that raise more questions than they answer.
           </p>
           <ul class="space-y-2">
-            <li class="flex items-center gap-2 text-white/40 text-xs"><span class="w-1 h-1 bg-gold rounded-full flex-shrink-0"></span>Sector landscaping and scoping</li>
-            <li class="flex items-center gap-2 text-white/40 text-xs"><span class="w-1 h-1 bg-gold rounded-full flex-shrink-0"></span>Thematic research notes</li>
-            <li class="flex items-center gap-2 text-white/40 text-xs"><span class="w-1 h-1 bg-gold rounded-full flex-shrink-0"></span>Data triangulation and validation</li>
-            <li class="flex items-center gap-2 text-white/40 text-xs"><span class="w-1 h-1 bg-gold rounded-full flex-shrink-0"></span>Source-cited reference materials</li>
+            <li class="flex items-center gap-2 text-white/40 text-xs"><span class="w-1 h-1 bg-gold rounded-full flex-shrink-0"></span>Strategic secondary research</li>
+            <li class="flex items-center gap-2 text-white/40 text-xs"><span class="w-1 h-1 bg-gold rounded-full flex-shrink-0"></span>Competitive intelligence & benchmarking</li>
+            <li class="flex items-center gap-2 text-white/40 text-xs"><span class="w-1 h-1 bg-gold rounded-full flex-shrink-0"></span>Market entry & feasibility analysis</li>
+            <li class="flex items-center gap-2 text-white/40 text-xs"><span class="w-1 h-1 bg-gold rounded-full flex-shrink-0"></span>Industry & company profiling</li>
+            <li class="flex items-center gap-2 text-white/40 text-xs"><span class="w-1 h-1 bg-gold rounded-full flex-shrink-0"></span>Sector landscape mapping</li>
+            <li class="flex items-center gap-2 text-white/40 text-xs"><span class="w-1 h-1 bg-gold rounded-full flex-shrink-0"></span>Thematic investment research</li>
+
           </ul>
         </div>
 
@@ -1753,14 +2254,19 @@
               <i class="fas fa-filter text-gold text-sm"></i>
             </div>
           </div>
-          <h3 class="font-serif text-xl font-medium text-white mb-3">Opportunity Screening &amp; Prioritisation</h3>
+          <h3 class="font-serif text-xl font-medium text-white mb-3">Financial Advisory Support</h3>
           <p class="text-white/50 text-sm leading-relaxed mb-6">
-            Rapid evaluation of investment opportunities across sectors and geographies — enabling deal teams to prioritise pipeline efficiently.
+            The analytical backbone from deal origination to committee presentation — faster process, more defensible conclusions.
           </p>
           <ul class="space-y-2">
-            <li class="flex items-center gap-2 text-white/40 text-xs"><span class="w-1 h-1 bg-gold rounded-full flex-shrink-0"></span>Long-list development and filtering</li>
-            <li class="flex items-center gap-2 text-white/40 text-xs"><span class="w-1 h-1 bg-gold rounded-full flex-shrink-0"></span>Screening framework design</li>
-            <li class="flex items-center gap-2 text-white/40 text-xs"><span class="w-1 h-1 bg-gold rounded-full flex-shrink-0"></span>White-space identification</li>
+            <li class="flex items-center gap-2 text-white/40 text-xs"><span class="w-1 h-1 bg-gold rounded-full flex-shrink-0"></span>M&A support & target screening</li>
+            <li class="flex items-center gap-2 text-white/40 text-xs"><span class="w-1 h-1 bg-gold rounded-full flex-shrink-0"></span>Financial modelling & valuations</li>
+            <li class="flex items-center gap-2 text-white/40 text-xs"><span class="w-1 h-1 bg-gold rounded-full flex-shrink-0"></span>Pitchbooks & Confidential Information Memoranda</li>
+            <li class="flex items-center gap-2 text-white/40 text-xs"><span class="w-1 h-1 bg-gold rounded-full flex-shrink-0"></span>Investor presentations & roadshow materials</li>
+            <li class="flex items-center gap-2 text-white/40 text-xs"><span class="w-1 h-1 bg-gold rounded-full flex-shrink-0"></span>Commercial due diligence research packs</li>
+            <li class="flex items-center gap-2 text-white/40 text-xs"><span class="w-1 h-1 bg-gold rounded-full flex-shrink-0"></span>Precedent transaction analysis</li>
+
+
           </ul>
         </div>
 
@@ -1771,14 +2277,17 @@
               <i class="fas fa-clipboard-check text-gold text-sm"></i>
             </div>
           </div>
-          <h3 class="font-serif text-xl font-medium text-white mb-3">Commercial Due Diligence Research</h3>
+          <h3 class="font-serif text-xl font-medium text-white mb-3">Strategy & Growth Advisory</h3>
           <p class="text-white/50 text-sm leading-relaxed mb-6">
-            Research-intensive workstreams supporting CDD: market sizing, demand assessment, and growth driver analysis.
+            Rigorous strategic frameworks applied to real business decisions — for portfolio companies and pre-acquisition assessment alike.
           </p>
           <ul class="space-y-2">
-            <li class="flex items-center gap-2 text-white/40 text-xs"><span class="w-1 h-1 bg-gold rounded-full flex-shrink-0"></span>TAM/SAM sizing</li>
-            <li class="flex items-center gap-2 text-white/40 text-xs"><span class="w-1 h-1 bg-gold rounded-full flex-shrink-0"></span>Growth driver analysis</li>
-            <li class="flex items-center gap-2 text-white/40 text-xs"><span class="w-1 h-1 bg-gold rounded-full flex-shrink-0"></span>Investment memoranda inputs</li>
+            <li class="flex items-center gap-2 text-white/40 text-xs"><span class="w-1 h-1 bg-gold rounded-full flex-shrink-0"></span>Corporate growth strategy development</li>
+            <li class="flex items-center gap-2 text-white/40 text-xs"><span class="w-1 h-1 bg-gold rounded-full flex-shrink-0"></span>Go-to-market planning & channel strategy</li>
+            <li class="flex items-center gap-2 text-white/40 text-xs"><span class="w-1 h-1 bg-gold rounded-full flex-shrink-0"></span>Business performance analysis</li>
+            <li class="flex items-center gap-2 text-white/40 text-xs"><span class="w-1 h-1 bg-gold rounded-full flex-shrink-0"></span>Scenario planning & stress testing</li>
+            <li class="flex items-center gap-2 text-white/40 text-xs"><span class="w-1 h-1 bg-gold rounded-full flex-shrink-0"></span>Investment thesis development</li>
+            <li class="flex items-center gap-2 text-white/40 text-xs"><span class="w-1 h-1 bg-gold rounded-full flex-shrink-0"></span>Operational benchmarking</li>
           </ul>
         </div>
 
@@ -1789,19 +2298,22 @@
               <i class="fas fa-chart-bar text-gold text-sm"></i>
             </div>
           </div>
-          <h3 class="font-serif text-xl font-medium text-white mb-3">Market Intelligence &amp; Competitive Analysis</h3>
+          <h3 class="font-serif text-xl font-medium text-white mb-3">IC-Ready Narratives & Deliverables</h3>
           <p class="text-white/50 text-sm leading-relaxed mb-6">
-            Structured competitive intelligence, GTM assessments, and market entry analysis built to support pre-deal conviction.
+            The final mile most research firms leave undone — clean, committee-ready materials that hold up under the toughest internal scrutiny.
           </p>
           <ul class="space-y-2">
-            <li class="flex items-center gap-2 text-white/40 text-xs"><span class="w-1 h-1 bg-gold rounded-full flex-shrink-0"></span>Competitor profiling</li>
-            <li class="flex items-center gap-2 text-white/40 text-xs"><span class="w-1 h-1 bg-gold rounded-full flex-shrink-0"></span>GTM assessment frameworks</li>
-            <li class="flex items-center gap-2 text-white/40 text-xs"><span class="w-1 h-1 bg-gold rounded-full flex-shrink-0"></span>Pitch books and IC materials</li>
+            <li class="flex items-center gap-2 text-white/40 text-xs"><span class="w-1 h-1 bg-gold rounded-full flex-shrink-0"></span>Investment memoranda & IC presentations</li>
+            <li class="flex items-center gap-2 text-white/40 text-xs"><span class="w-1 h-1 bg-gold rounded-full flex-shrink-0"></span>Deal rationale & thesis articulation</li>
+            <li class="flex items-center gap-2 text-white/40 text-xs"><span class="w-1 h-1 bg-gold rounded-full flex-shrink-0"></span>Risk assessment frameworks</li>
+            <li class="flex items-center gap-2 text-white/40 text-xs"><span class="w-1 h-1 bg-gold rounded-full flex-shrink-0"></span>Comparable company & transaction analysis</li>
+            <li class="flex items-center gap-2 text-white/40 text-xs"><span class="w-1 h-1 bg-gold rounded-full flex-shrink-0"></span>Management presentation support</li>
+            <li class="flex items-center gap-2 text-white/40 text-xs"><span class="w-1 h-1 bg-gold rounded-full flex-shrink-0"></span>Board-level reporting packs</li>
           </ul>
         </div>
 
         <!-- Service 5 — Featured (spans 2 cols) -->
-        <div class="service-card md:col-span-2 reveal reveal-delay-5 visible" data-testid="service-benchmarking">
+        <!-- <div class="service-card md:col-span-2 reveal reveal-delay-5 visible" data-testid="service-benchmarking">
           <div class="flex items-start justify-between mb-6">
             <div class="icon-wrap">
               <i class="fas fa-balance-scale text-gold text-sm"></i>
@@ -1817,9 +2329,9 @@
             <li class="flex items-center gap-2 text-white/40 text-xs"><span class="w-1 h-1 bg-gold rounded-full flex-shrink-0"></span>Sector performance mapping</li>
             <li class="flex items-center gap-2 text-white/40 text-xs"><span class="w-1 h-1 bg-gold rounded-full flex-shrink-0"></span>Valuation context analysis</li>
           </ul>
-        </div>
+        </div>-->
 
-      </div>
+      </div> 
 
       <!-- Service Footer -->
       <div class="mt-12 border-t border-white/8 pt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6 reveal visible">
@@ -1850,6 +2362,245 @@
     </div>
   </section>
 
+
+  <!-- ==================== BUILT FOR YOUR WORKFLOW ==================== -->
+  <section id="ai-advantage" class="ai-section-wrap py-28 relative" data-testid="ai-advantage-section">
+    <canvas id="neural-canvas" style="position:absolute;inset:0;width:100%;height:100%;"></canvas>
+    <div class="ai-scan-line" style="top:20%"></div>
+    <div class="ai-glow-line" style="position:absolute;top:0;left:0;right:0;z-index:1;"></div>
+
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+
+      <!-- Section Header -->
+      <div class="text-center mb-20 reveal visible">
+        <div class="flex items-center justify-center gap-3 mb-6">
+          <div style="width:40px;height:1px;background:linear-gradient(90deg,transparent,#00C8FF);opacity:0.5;"></div>
+          <span class="ai-label">AI-Augmented Intelligence</span>
+          <div style="width:40px;height:1px;background:linear-gradient(90deg,#00C8FF,transparent);opacity:0.5;"></div>
+        </div>
+        <h2 class="font-serif text-4xl md:text-5xl font-light tracking-tight mb-6" style="color:#FFFFFF;">
+          Research. Amplified by<br>
+          <em class="not-italic" style="color:#A9C2E5;">Artificial Intelligence.</em>
+        </h2>
+        <p class="text-sm leading-relaxed max-w-2xl mx-auto" style="color:rgba(255,255,255,0.45);">
+          Every TAARU engagement is powered by a proprietary AI research layer — not to replace senior judgement, but to dramatically expand data coverage, compress timelines, and surface patterns no human analyst could catch at scale. The result: institutional-grade intelligence, delivered faster and with greater precision than ever before.
+        </p>
+      </div>
+
+      <!-- Pipeline Animation -->
+      <div class="mb-16 reveal reveal-delay-1 visible">
+        <p class="ai-label text-center mb-5" style="font-size:0.58rem;opacity:0.5;">AI Research Pipeline — Live Processing</p>
+        <div class="ai-pipeline" id="ai-pipeline">
+          <div class="ai-pipeline-step active" data-step="0">Data Ingestion</div>
+          <div class="ai-pipeline-step" data-step="1">NLP Extraction</div>
+          <div class="ai-pipeline-step" data-step="2">Pattern Analysis</div>
+          <div class="ai-pipeline-step" data-step="3">Insight Synthesis</div>
+          <div class="ai-pipeline-step" data-step="4">Senior Review</div>
+          <div class="ai-pipeline-step" data-step="5">Delivery</div>
+        </div>
+        <!-- Ticker -->
+        <div class="data-ticker mt-4" id="ai-ticker">Scanning 14,280 data sources across 38 markets...</div>
+      </div>
+
+      <!-- 6 Benefit Cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-16">
+
+        <!-- Card 1: Speed -->
+        <div class="ai-benefit-card reveal reveal-delay-1 visible">
+          <div class="ai-icon-wrap">
+            <i class="fas fa-bolt" style="color:#00C8FF;font-size:1rem;"></i>
+          </div>
+          <div class="ai-metric-num mb-2">48h</div>
+          <h3 class="font-sans font-600 text-sm mb-3" style="color:rgba(255,255,255,0.85);font-weight:600;">Lightning Turnaround</h3>
+          <p class="text-xs leading-relaxed" style="color:rgba(255,255,255,0.35);">AI-powered data harvesting and synthesis compresses research timelines from weeks to 48–72 hours without sacrificing depth or rigour.</p>
+          <div class="mt-4">
+            <div class="flex justify-between mb-1">
+              <span class="text-xs" style="color:rgba(255,255,255,0.2);">Traditional</span>
+              <span class="text-xs" style="color:#00C8FF;">AI-Augmented</span>
+            </div>
+            <div style="height:4px;background:rgba(255,255,255,0.06);border-radius:2px;overflow:hidden;">
+              <div class="speed-bar" style="--target-w:92%;"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: Accuracy -->
+        <div class="ai-benefit-card reveal reveal-delay-2 visible">
+          <div class="ai-icon-wrap">
+            <i class="fas fa-crosshairs" style="color:#00C8FF;font-size:1rem;"></i>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
+            <div class="ai-ring-wrap" style="width:72px;height:72px;">
+              <svg viewBox="0 0 60 60" width="72" height="72">
+                <defs>
+                  <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" style="stop-color:#00C8FF"/>
+                    <stop offset="100%" style="stop-color:#4A9EFF"/>
+                  </linearGradient>
+                </defs>
+                <circle class="ai-ring-track" cx="30" cy="30" r="24"/>
+                <circle class="ai-ring-fill" id="accuracy-ring" cx="30" cy="30" r="24" style="stroke-dasharray:150.8;stroke-dashoffset:150.8;transform:rotate(-90deg);transform-origin:30px 30px;"/>
+              </svg>
+            </div>
+            <div class="ai-metric-num">97%</div>
+          </div>
+          <h3 class="font-sans text-sm mb-3" style="color:rgba(255,255,255,0.85);font-weight:600;">Data Accuracy</h3>
+          <p class="text-xs leading-relaxed" style="color:rgba(255,255,255,0.35);">Multi-source cross-validation and AI anomaly detection eliminates errors, ensuring every data point in your deliverable is verified and defensible.</p>
+        </div>
+
+        <!-- Card 3: Coverage -->
+        <div class="ai-benefit-card reveal reveal-delay-3 visible">
+          <div class="ai-icon-wrap">
+            <i class="fas fa-globe-asia" style="color:#00C8FF;font-size:1rem;"></i>
+          </div>
+          <div class="ai-metric-num mb-2">50k+</div>
+          <h3 class="font-sans text-sm mb-3" style="color:rgba(255,255,255,0.85);font-weight:600;">Sources Analysed Per Project</h3>
+          <p class="text-xs leading-relaxed" style="color:rgba(255,255,255,0.35);">Our AI layer simultaneously processes news feeds, regulatory filings, financial databases, academic papers, and proprietary signals across 80+ global markets.</p>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="ai-glow-tag">News Intelligence</span>
+            <span class="ai-glow-tag">Regulatory Filings</span>
+            <span class="ai-glow-tag">Financial Data</span>
+          </div>
+        </div>
+
+        <!-- Card 4: Always-On -->
+        <div class="ai-benefit-card reveal reveal-delay-1 visible">
+          <div class="ai-icon-wrap">
+            <i class="fas fa-satellite-dish" style="color:#00C8FF;font-size:1rem;"></i>
+          </div>
+          <div class="ai-metric-num mb-2">24/7</div>
+          <h3 class="font-sans text-sm mb-3" style="color:rgba(255,255,255,0.85);font-weight:600;">Always-On Market Monitoring</h3>
+          <p class="text-xs leading-relaxed" style="color:rgba(255,255,255,0.35);">AI systems track real-time market signals, competitive moves, and sector developments around the clock — so your intelligence is never stale when a window opens.</p>
+          <!-- Pulse radar graphic -->
+          <div class="mt-4 relative" style="height:36px;overflow:hidden;">
+            <svg viewBox="0 0 200 36" style="width:100%;height:100%;">
+              <polyline points="0,18 10,14 20,22 30,10 40,26 50,8 60,20 70,16 80,24 90,12 100,18 110,14 120,22 130,10 140,26 150,8 160,20 170,16 180,24 190,12 200,18" fill="none" stroke="rgba(0,200,255,0.4)" stroke-width="1.5"/>
+              <polyline points="0,18 10,14 20,22 30,10 40,26 50,8 60,20 70,16 80,24 90,12 100,18 110,14 120,22 130,10 140,26 150,8 160,20 170,16 180,24 190,12 200,18" fill="none" stroke="rgba(0,200,255,0.15)" stroke-width="3"/>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Card 5: Consistency -->
+        <div class="ai-benefit-card reveal reveal-delay-2 visible">
+          <div class="ai-icon-wrap">
+            <i class="fas fa-layer-group" style="color:#00C8FF;font-size:1rem;"></i>
+          </div>
+          <div class="ai-metric-num mb-2">Zero</div>
+          <h3 class="font-sans text-sm mb-3" style="color:rgba(255,255,255,0.85);font-weight:600;">Analyst Fatigue or Bias</h3>
+          <p class="text-xs leading-relaxed" style="color:rgba(255,255,255,0.35);">AI processing is consistent regardless of complexity or volume. Combined with senior human review, you get the best of both: computational depth with expert interpretation.</p>
+          <div class="ai-compare-row mt-4" style="border-bottom:none;padding:0;">
+            <span class="ai-compare-old">Manual bias risk</span>
+            <span class="ai-compare-label">→</span>
+            <span class="ai-compare-new">AI-calibrated</span>
+          </div>
+        </div>
+
+        <!-- Card 6: Cost -->
+        <div class="ai-benefit-card reveal reveal-delay-3 visible">
+          <div class="ai-icon-wrap">
+            <i class="fas fa-chart-line" style="color:#00C8FF;font-size:1rem;"></i>
+          </div>
+          <div class="ai-metric-num mb-2">3×</div>
+          <h3 class="font-sans text-sm mb-3" style="color:rgba(255,255,255,0.85);font-weight:600;">More Value Per Engagement</h3>
+          <p class="text-xs leading-relaxed" style="color:rgba(255,255,255,0.35);">AI automation of repetitive data work means our senior professionals spend their time on insight generation and narrative — not data gathering. You pay for judgement, not hours.</p>
+          <div class="mt-4">
+            <div style="display:flex;gap:4px;align-items:flex-end;height:28px;">
+              <div style="flex:1;background:rgba(255,255,255,0.08);height:35%;border-radius:2px 2px 0 0;"></div>
+              <div style="flex:1;background:rgba(0,200,255,0.3);height:60%;border-radius:2px 2px 0 0;"></div>
+              <div style="flex:1;background:rgba(0,200,255,0.7);height:90%;border-radius:2px 2px 0 0;"></div>
+              <div style="flex:1;background:#00C8FF;height:100%;border-radius:2px 2px 0 0;"></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Comparison: Traditional vs AI-Augmented -->
+      <div class="grid lg:grid-cols-2 gap-6 mb-16 reveal reveal-delay-2 visible">
+
+        <!-- Left: Comparison Table -->
+        <div style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);padding:32px;">
+          <p class="ai-label mb-6" style="font-size:0.58rem;">Traditional vs. AI-Augmented Research</p>
+
+          <div class="ai-compare-row">
+            <span class="ai-compare-old" style="text-align:right;">5–10 business days</span>
+            <span class="ai-compare-label">Turnaround</span>
+            <span class="ai-compare-new">48–72 hours</span>
+          </div>
+          <div class="ai-compare-row">
+            <span class="ai-compare-old" style="text-align:right;">100–500 sources</span>
+            <span class="ai-compare-label">Data Sources</span>
+            <span class="ai-compare-new">50,000+ signals</span>
+          </div>
+          <div class="ai-compare-row">
+            <span class="ai-compare-old" style="text-align:right;">Human fatigue risk</span>
+            <span class="ai-compare-label">Consistency</span>
+            <span class="ai-compare-new">Uniform precision</span>
+          </div>
+          <div class="ai-compare-row">
+            <span class="ai-compare-old" style="text-align:right;">Market hours only</span>
+            <span class="ai-compare-label">Monitoring</span>
+            <span class="ai-compare-new">24 / 7 always-on</span>
+          </div>
+          <div class="ai-compare-row">
+            <span class="ai-compare-old" style="text-align:right;">Manually compiled</span>
+            <span class="ai-compare-label">Benchmarks</span>
+            <span class="ai-compare-new">Auto-updated live</span>
+          </div>
+          <div class="ai-compare-row">
+            <span class="ai-compare-old" style="text-align:right;">1 analyst's view</span>
+            <span class="ai-compare-label">Perspective</span>
+            <span class="ai-compare-new">Multi-model synthesis</span>
+          </div>
+        </div>
+
+        <!-- Right: How AI Works at TAARU -->
+        <div style="background:rgba(0,200,255,0.03);border:1px solid rgba(0,200,255,0.12);padding:32px;position:relative;overflow:hidden;">
+          <div style="position:absolute;top:-30px;right:-30px;width:180px;height:180px;background:radial-gradient(circle,rgba(0,200,255,0.06),transparent 70%);border-radius:50%;pointer-events:none;"></div>
+          <p class="ai-label mb-6" style="font-size:0.58rem;">How AI Works at TAARU</p>
+
+          <div class="space-y-5">
+            <div class="flex gap-4 items-start">
+              <div style="width:24px;height:24px;background:rgba(0,200,255,0.1);border:1px solid rgba(0,200,255,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:0.55rem;font-weight:700;color:#00C8FF;font-family:monospace;">01</div>
+              <div>
+                <p class="font-sans text-xs font-600 mb-1" style="color:rgba(255,255,255,0.75);font-weight:600;">Automated Intelligence Harvesting</p>
+                <p class="text-xs" style="color:rgba(255,255,255,0.3);">AI agents crawl thousands of structured and unstructured data sources — from Bloomberg-tier databases to regulatory portals and expert networks.</p>
+              </div>
+            </div>
+            <div class="flex gap-4 items-start">
+              <div style="width:24px;height:24px;background:rgba(0,200,255,0.1);border:1px solid rgba(0,200,255,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:0.55rem;font-weight:700;color:#00C8FF;font-family:monospace;">02</div>
+              <div>
+                <p class="font-sans text-xs font-600 mb-1" style="color:rgba(255,255,255,0.75);font-weight:600;">NLP-Powered Synthesis</p>
+                <p class="text-xs" style="color:rgba(255,255,255,0.3);">Large language models extract themes, contradictions, and signals from the raw corpus — transforming data noise into structured insight.</p>
+              </div>
+            </div>
+            <div class="flex gap-4 items-start">
+              <div style="width:24px;height:24px;background:rgba(0,200,255,0.1);border:1px solid rgba(0,200,255,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:0.55rem;font-weight:700;color:#00C8FF;font-family:monospace;">03</div>
+              <div>
+                <p class="font-sans text-xs font-600 mb-1" style="color:rgba(255,255,255,0.75);font-weight:600;">Senior Human Overlay</p>
+                <p class="text-xs" style="color:rgba(255,255,255,0.3);">Every AI output is reviewed and shaped by our senior consultants — adding investment intuition, sector context, and narrative conviction that no model can replicate alone.</p>
+              </div>
+            </div>
+            <div class="flex gap-4 items-start">
+              <div style="width:24px;height:24px;background:rgba(0,200,255,0.1);border:1px solid rgba(0,200,255,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:0.55rem;font-weight:700;color:#00C8FF;font-family:monospace;">04</div>
+              <div>
+                <p class="font-sans text-xs font-600 mb-1" style="color:rgba(255,255,255,0.75);font-weight:600;">IC-Ready Packaging</p>
+                <p class="text-xs" style="color:rgba(255,255,255,0.3);">The synthesised intelligence is formatted into decision-grade deliverables — committee-ready, logically structured, and designed to hold up under the toughest institutional scrutiny.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom CTA bar -->
+      <div class="text-center reveal reveal-delay-3 visible">
+        <p class="text-xs mb-5" style="color:rgba(255,255,255,0.3);letter-spacing:0.1em;text-transform:uppercase;">The future of investment research — available today</p>
+        <a href="#contact" class="btn-primary" style="background:linear-gradient(135deg,rgba(0,200,255,0.15),rgba(14,132,255,0.15));border:1px solid rgba(0,200,255,0.3);color:#00C8FF;">Experience AI-Powered Research</a>
+      </div>
+
+    </div>
+    <div class="ai-glow-line" style="position:absolute;bottom:0;left:0;right:0;z-index:1;"></div>
+  </section>
 
   <!-- ==================== BUILT FOR YOUR WORKFLOW ==================== -->
   <section id="workflow" class="py-28 relative" style="background:var(--bg-primary)" data-testid="workflow-section">
@@ -1971,7 +2722,7 @@
           <div class="gold-rule"></div>
         </div>
         <h2 class="font-serif text-4xl md:text-5xl font-light text-white tracking-tight mb-4 reveal reveal-delay-1 visible">Industries We Serve</h2>
-        <p class="text-white/40 text-sm max-w-md mx-auto reveal reveal-delay-2 visible">Our founders have led engagements across a broad range of sectors, bringing both depth and cross-sector perspective to every assignment.</p>
+        <p class="text-white/40 text-sm max-w-md mx-auto reveal reveal-delay-2 visible">The founders have led engagements across a broad range of sectors, bringing both depth and cross-sector perspective to every assignment.</p>
       </div>
 
       <div class="flex flex-wrap justify-center gap-3 reveal reveal-delay-2 visible">
@@ -2835,11 +3586,266 @@ fetch(GOOGLE_SCRIPT_URL, {
     });
 </script>
 
+<script>
+  // ===============================================================
+  // HERO PARTICLE NETWORK
+  // ===============================================================
+  (function() {
+    const canvas = document.getElementById('hero-particles');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    function resize() {
+      canvas.width  = canvas.parentElement.offsetWidth;
+      canvas.height = canvas.parentElement.offsetHeight;
+    }
+    resize();
+    window.addEventListener('resize', resize);
+    const N = 55;
+    const nodes = [];
+    for (let i = 0; i < N; i++) {
+      nodes.push({ x: Math.random()*canvas.width, y: Math.random()*canvas.height,
+        vx: (Math.random()-0.5)*0.4, vy: (Math.random()-0.5)*0.4,
+        r: Math.random()*1.5+0.5 });
+    }
+    function draw() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      nodes.forEach(n => {
+        n.x += n.vx; n.y += n.vy;
+        if (n.x<0||n.x>canvas.width) n.vx*=-1;
+        if (n.y<0||n.y>canvas.height) n.vy*=-1;
+      });
+      for (let i=0;i<N;i++) for (let j=i+1;j<N;j++) {
+        const dx=nodes[i].x-nodes[j].x, dy=nodes[i].y-nodes[j].y;
+        const dist=Math.sqrt(dx*dx+dy*dy);
+        if (dist<130) {
+          ctx.beginPath();
+          ctx.moveTo(nodes[i].x,nodes[i].y);
+          ctx.lineTo(nodes[j].x,nodes[j].y);
+          ctx.strokeStyle=`rgba(46,95,163,${(1-dist/130)*0.2})`;
+          ctx.lineWidth=0.8; ctx.stroke();
+        }
+      }
+      nodes.forEach(n => {
+        ctx.beginPath(); ctx.arc(n.x,n.y,n.r,0,Math.PI*2);
+        ctx.fillStyle='rgba(46,95,163,0.4)'; ctx.fill();
+      });
+      requestAnimationFrame(draw);
+    }
+    draw();
+  })();
+
+  // ===============================================================
+  // NEURAL CANVAS (AI SECTION)
+  // ===============================================================
+  (function() {
+    const canvas = document.getElementById('neural-canvas');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    function resize() {
+      canvas.width  = canvas.parentElement.offsetWidth;
+      canvas.height = canvas.parentElement.offsetHeight;
+    }
+    resize();
+    window.addEventListener('resize', resize);
+    const N = 80;
+    const nodes = [];
+    for (let i=0;i<N;i++) nodes.push({
+      x: Math.random()*canvas.width, y: Math.random()*canvas.height,
+      vx: (Math.random()-0.5)*0.25, vy: (Math.random()-0.5)*0.25,
+      r: Math.random()*1.8+0.4, pulse: Math.random()*Math.PI*2
+    });
+    function draw() {
+      ctx.clearRect(0,0,canvas.width,canvas.height);
+      nodes.forEach(n => {
+        n.x+=n.vx; n.y+=n.vy; n.pulse+=0.025;
+        if (n.x<0||n.x>canvas.width) n.vx*=-1;
+        if (n.y<0||n.y>canvas.height) n.vy*=-1;
+      });
+      for (let i=0;i<N;i++) for (let j=i+1;j<N;j++) {
+        const dx=nodes[i].x-nodes[j].x, dy=nodes[i].y-nodes[j].y;
+        const dist=Math.sqrt(dx*dx+dy*dy);
+        if (dist<110) {
+          const alpha=(1-dist/110)*0.28;
+          const grd=ctx.createLinearGradient(nodes[i].x,nodes[i].y,nodes[j].x,nodes[j].y);
+          grd.addColorStop(0,`rgba(0,200,255,${alpha})`);
+          grd.addColorStop(1,`rgba(14,132,255,${alpha*0.5})`);
+          ctx.beginPath(); ctx.moveTo(nodes[i].x,nodes[i].y);
+          ctx.lineTo(nodes[j].x,nodes[j].y);
+          ctx.strokeStyle=grd; ctx.lineWidth=0.7; ctx.stroke();
+        }
+      }
+      nodes.forEach(n => {
+        const p=0.5+0.5*Math.sin(n.pulse);
+        const glow=ctx.createRadialGradient(n.x,n.y,0,n.x,n.y,n.r*5);
+        glow.addColorStop(0,`rgba(0,200,255,${0.35*p})`);
+        glow.addColorStop(1,'transparent');
+        ctx.beginPath(); ctx.arc(n.x,n.y,n.r*5,0,Math.PI*2);
+        ctx.fillStyle=glow; ctx.fill();
+        ctx.beginPath(); ctx.arc(n.x,n.y,n.r,0,Math.PI*2);
+        ctx.fillStyle=`rgba(0,200,255,${0.55+0.45*p})`; ctx.fill();
+      });
+      requestAnimationFrame(draw);
+    }
+    draw();
+  })();
+
+  // ===============================================================
+  // AI PIPELINE ANIMATION
+  // ===============================================================
+  (function() {
+    const steps = document.querySelectorAll('.ai-pipeline-step');
+    const ticker = document.getElementById('ai-ticker');
+    if (!steps.length) return;
+    const texts = [
+      'Scanning 14,280 data sources across 38 markets...',
+      'NLP extraction complete — 3,842 signals identified...',
+      'Cross-validating data against 7 reference databases...',
+      'Pattern analysis: detecting 12 emerging market signals...',
+      'Synthesising insights for Investment Committee narrative...',
+      'Senior review applied — quality score: 97.4%...',
+    ];
+    let cur = 0;
+    function next() {
+      steps.forEach(s => s.classList.remove('active'));
+      steps[cur].classList.add('active');
+      if (ticker) ticker.textContent = texts[cur] || texts[0];
+      cur = (cur+1) % steps.length;
+    }
+    next();
+    setInterval(next, 1900);
+  })();
+
+  // ===============================================================
+  // ACCURACY RING ANIMATION
+  // ===============================================================
+  (function() {
+    const ring = document.getElementById('accuracy-ring');
+    if (!ring) return;
+    const r=24, circ=2*Math.PI*r;
+    ring.style.strokeDasharray=circ;
+    ring.style.strokeDashoffset=circ;
+    ring.style.stroke='url(#ringGrad)';
+    ring.style.transform='rotate(-90deg)';
+    ring.style.transformOrigin='30px 30px';
+    const obs=new IntersectionObserver(entries=>{
+      if (entries[0].isIntersecting) {
+        ring.style.transition='stroke-dashoffset 2.5s cubic-bezier(.16,1,.3,1)';
+        ring.style.strokeDashoffset=circ*(1-0.97);
+        obs.disconnect();
+      }
+    },{threshold:0.3});
+    obs.observe(ring);
+  })();
+
+  // ===============================================================
+  // SPEED BARS ANIMATION
+  // ===============================================================
+  (function() {
+    const bars = document.querySelectorAll('.speed-bar');
+    if (!bars.length) return;
+    const obs=new IntersectionObserver(entries=>{
+      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('animated'); obs.unobserve(e.target); }});
+    },{threshold:0.3});
+    bars.forEach(b=>obs.observe(b));
+  })();
+</script>
+
+
   <!-- GO TO TOP BUTTON -->
   <div id="go-top" role="button" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
     <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
       <polyline points="18 15 12 9 6 15"></polyline>
     </svg>
   </div>
+
+<script>
+// ================================================================
+//  TAARU ANIMATIONS — Professional Edition
+//  1. Floating number counters on stat-num elements
+//  2. Stagger reveal on grid children
+//  3. Subtle mouse-tracking card spotlight
+// ================================================================
+
+(function() {
+
+  /* ─────────────────────────────────────────────
+     1. NUMBER COUNTERS — stat-num elements
+     Ease-out count from 0 to target on viewport entry
+     ───────────────────────────────────────────── */
+  function animateCounter(el) {
+    const raw   = el.textContent.trim();
+    const match = raw.match(/^(\d+)/);
+    if (!match) return;
+
+    const target   = parseInt(match[1], 10);
+    const suffix   = raw.slice(match[1].length);
+    const duration = 1400;
+    const start    = performance.now();
+
+    function ease(t) { return 1 - Math.pow(2, -10 * t); }
+
+    function tick(now) {
+      const t = Math.min((now - start) / duration, 1);
+      el.textContent = Math.round(ease(t) * target) + suffix;
+      if (t < 1) requestAnimationFrame(tick);
+      else {
+        el.textContent = target + suffix;
+        el.classList.add('counter-popped');
+      }
+    }
+    requestAnimationFrame(tick);
+  }
+
+  const counterObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        animateCounter(e.target);
+        counterObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.6 });
+
+  document.querySelectorAll('.stat-num, .stat-num-glow').forEach(el => counterObs.observe(el));
+
+
+  /* ─────────────────────────────────────────────
+     2. STAGGER REVEAL — auto-assign delays to grid children
+     ───────────────────────────────────────────── */
+  document.querySelectorAll('section .grid').forEach(grid => {
+    Array.from(grid.children).forEach((child, i) => {
+      if (!child.classList.contains('reveal')) child.classList.add('reveal');
+      if (!child.className.match(/reveal-delay-\d/)) {
+        child.style.transitionDelay = `${0.08 + i * 0.11}s`;
+      }
+    });
+  });
+
+  const revealObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        revealObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.07, rootMargin: '0px 0px -24px 0px' });
+
+  document.querySelectorAll('.reveal:not(.visible)').forEach(el => revealObs.observe(el));
+
+
+  /* ─────────────────────────────────────────────
+     3. MOUSE-TRACKING CARD SPOTLIGHT
+     Soft radial glow follows cursor inside cards
+     ───────────────────────────────────────────── */
+  document.querySelectorAll('.service-card, .why-card, .eng-card').forEach(card => {
+    card.addEventListener('mousemove', e => {
+      const r = card.getBoundingClientRect();
+      card.style.setProperty('--mx', `${((e.clientX - r.left) / r.width  * 100)}%`);
+      card.style.setProperty('--my', `${((e.clientY - r.top)  / r.height * 100)}%`);
+    });
+  });
+
+})();
+</script>
+</script>
 
 </body></html>
